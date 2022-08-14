@@ -20,6 +20,7 @@ public class Imc {
         JLabel label = new JLabel();
         JButton button = new JButton();
         frame.setSize(500, 500);
+        frame.setLocationRelativeTo(null);
         button.setSize(400, 400);
         button.setVisible(true);
         button.setText("Calcular");
