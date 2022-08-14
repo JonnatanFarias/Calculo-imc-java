@@ -56,6 +56,7 @@ public class Imc {
 
         // Define the position and size of the button
         btn.setBounds(40, 220, 150, 40);
+        // add obejcts of the frame
         f.add(btn);
         f.add(labelnome);
         f.add(labelidade);
