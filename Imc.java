@@ -1,5 +1,7 @@
 
 import java.awt.Dimension;
+import java.awt.LayoutManager;
+import java.util.concurrent.Flow;
 
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -15,26 +17,39 @@ public class Imc {
      */
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Calcular imc");
-        JPanel panel = new JPanel();
-        JLabel label = new JLabel();
-        JButton button = new JButton();
-        frame.setSize(500, 500);
-        frame.setLocationRelativeTo(null);
-        button.setSize(400, 400);
-        button.setVisible(true);
-        button.setText("Calcular");
-        frame.add(button);
-        panel.add(button);
-        frame.getContentPane().add(panel);
-        frame.setVisible(true);
+        JFrame f = new JFrame("Calcular IMC");
 
-        button.addActionListener((e) -> {
-            var peso = Double.parseDouble(JOptionPane.showInputDialog("Olá digite seu peso"));
-            var altura = Double.parseDouble(JOptionPane.showInputDialog("Olá digite sua altura")) / 100;
-            var s = peso / (altura * altura);
-            label.setText(String.valueOf(s));
-        });
+        f.setSize(300, 300);
+        // Set the layout to null
+        f.setLayout(null);
+        // Create label
+        JLabel labelpeso = new JLabel("Seu peso :");
+        JLabel labelaltura = new JLabel("Sua altura: ");
+        // Create button
+        JButton btn = new JButton("Calcular");
+        // Define the position and size of the label
+        labelpeso.setBounds(0, 50, 200, 40);
+        labelaltura.setBounds(0, 60, 200, 40);
+        // Define the position and size of the button
+        btn.setBounds(45, 150, 200, 40);
+        f.add(btn);
+        f.add(labelpeso);
+        f.add(labelaltura);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);
+        f.setVisible(true);
+
+        /*
+         * button.addActionListener((e) -> {
+         * var peso =
+         * Double.parseDouble(JOptionPane.showInputDialog("Olá digite seu peso"));
+         * var altura =
+         * Double.parseDouble(JOptionPane.showInputDialog("Olá digite sua altura")) /
+         * 100;
+         * var s = peso / (altura * altura);
+         * label.setText(String.valueOf(s));
+         * });
+         */
 
     }
 }
